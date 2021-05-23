@@ -6,7 +6,7 @@
 
  if(strlen($cedula)==10){
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
-    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula'";
+    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula';
  }else {
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
 }
@@ -38,7 +38,6 @@
 
 
  if ($result->num_rows > 0) {
-<<<<<<< HEAD
  while($row = $result->fetch_assoc()) {
 
  echo "<tr>";
@@ -49,35 +48,18 @@
  echo " <td>" . $row['usu_nacimiento'] . "</td>";
  echo "</tr>";
 
-=======
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo " <td>" . $row['usu_cedula'] . "</td>";
-        echo " <td>" . $row['usu_nombre'] ."</td>";
-        echo " <td>" . $row['usu_apellido'] . "</td>";
-        echo " <td>" . $row['usu_mail'] . "</td>";
-        echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        echo "</tr>";
->>>>>>> 61e7cab6b25e553ebe11f02e08f5812217a8be0b
     if ($result2->num_rows >0){
         while ($row = $result2->fetch_assoc()){
             echo "<tr>";
             echo " <td>" . $row['telf_numero'] . "</td>";
             echo " <td>" . $row['telf_operadora'] ."</td>";
             echo " <td>" . $row['telf_tipo'] . "</td>";
-<<<<<<< HEAD
             echo " <td>  . $row[''] "
             echo "</tr>";        
         }
     }
 
  }
-=======
-            echo "</tr>";        
-        }
-    }
-    }
->>>>>>> 61e7cab6b25e553ebe11f02e08f5812217a8be0b
  } else {
  echo "<tr>";
  echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
