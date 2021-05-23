@@ -16,7 +16,7 @@
 -->
     <br>
     <form onsubmit="return buscarCE()">
-        <div id="Busqueda"><h1>Buscar por Cédula o Correo</h1></div>
+        <div id="Busqueda" align="center"><h1>Buscar por Cédula o Correo Electrónico</h1></div>
         <br>
         <input type="text" id="cedula" name="cedula" value="">
         <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarCE()">
