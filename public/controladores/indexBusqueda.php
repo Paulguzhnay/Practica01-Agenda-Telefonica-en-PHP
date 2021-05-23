@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../../../css/estilo.css" rel="stylesheet" />
-    <link href="../../../css/layout.css" rel="stylesheet" />
+    <link href="../../css/estilo.css" rel="stylesheet" />
+    <link href="../../css/layout.css" rel="stylesheet" />
     <meta charset="UTF-8">
-    <script type="text/javascript" src="../../../config/buscarCE.js"></script>
+    <script type="text/javascript" src="../../config/buscarCE.js"></script>
     <title>Gestión de Usuarios</title>
 </head>
 <body>
     <header>
-        <a href="../../../index.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+        <a href="../../index.html"><img src="../../images/Agenda Telefonica.jpg"></a>
     </header>
 <!--
     BOTON CEDULA 
