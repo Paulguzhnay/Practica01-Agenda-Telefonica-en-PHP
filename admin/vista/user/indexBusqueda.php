@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html>
-    
 <head>
-<link href="../../../css/estilo.css" rel="stylesheet" />
- <meta charset="UTF-8">
- <script type="text/javascript" src="../../../config/buscarPorCedula.js"></script>
- <title>Gestión de usuarios</title>
+    <link href="../../../css/estilo.css" rel="stylesheet" />
+    <link href="../../../css/layout.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../../../config/buscarPorCedula.js"></script>
+    <title>Gestión de Usuarios</title>
 </head>
 <body>
-<header>
-        <img src="../../../images/Agenda Telefonica.jpg">
-        <nav>
-            <ul>
-            <li><a href="admin/vista/user/indexBusqueda.php">Búsqueda de Contactos</a></li>
-            <li><a>Registrarse</a></li>
-            <li><a>Iniciar Sesión</a></li>
-            </ul>
-        </nav>
-
+    <header>
+        <a href="../../../index.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
     </header>
 <!--
     BOTON CEDULA 
 -->
-<br>
-<form onsubmit="return buscarPorCedula()">
-<div id="Busqueda"><b>Buscar por Cedula o Correo</b></div>
-<br>
-<input type="text" id="cedula" name="cedula" value="">
- <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarCE()">
- <br>
- <br>
+    <br>
+    <form onsubmit="return buscarPorCedula()">
+        <div id="Busqueda"><h1>Buscar por Cédula o Correo</h1></div>
+        <br>
+        <input type="text" id="cedula" name="cedula" value="">
+        <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarCE()">
+        <br>
+        <br>
+    </form>
 
- 
-</form>
-
-<div id="informacion"><b>Datos de la persona</b></div>
+<div id="informacion"><h1>Datos de la persona</h1></div>
 
 <br>
 <br>
