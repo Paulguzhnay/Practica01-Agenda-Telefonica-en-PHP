@@ -18,7 +18,6 @@
  <th>Cedula</th>
  <th>Nombres</th>
  <th>Apellidos</th>
- <th>Telefono</th>
  <th>Correo</th>
  <th>Fecha Nacimiento</th>
  <th></th>
@@ -46,9 +45,8 @@ echo " <table style='width:100%'>
  echo " <td>" . $row['usu_cedula'] . "</td>";
  echo " <td>" . $row['usu_nombre'] ."</td>";
  echo " <td>" . $row['usu_apellido'] . "</td>";
- echo " <td>" . $row['usu_correo'] . "</td>";
+ echo " <td>" . $row['usu_mail'] . "</td>";
  echo " <td>" . $row['usu_nacimiento'] . "</td>";
- echo " <td>  . $row[''] "
  echo "</tr>";
 
  /*if ($result2->num_rows >0){
