@@ -3,7 +3,6 @@
  include "conexionBD.php";
  $cedula = $_GET['cedula'];
  //echo "Hola " . $cedula;
- echo strlen($cedula); 
 if(strlen($cedula)==10){
     $sql = "SELECT * FROM usuario WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
 }else {

@@ -1,6 +1,7 @@
 
 function buscarPorCedula() {
     var cedula = document.getElementById("cedula").value;
+    console.log(length(cedula))
     if (cedula == "") {
     document.getElementById("informacion").innerHTML = "";
     } else {
