@@ -4,15 +4,15 @@
  $cedula = $_GET['cedula'];
  //echo "Hola " . $cedula;
 
-if(strlen($cedula)==10){
+// if(strlen($cedula)==10){
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
-    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula';
-}else {
-    $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
-}
+/*    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula';
+// }else {
+//    $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
+}*/
 //cambiar la consulta para puede buscar por ocurrencias de letras
  $result = $conn->query($sql);
- $result2= $conn->query($sql2);
+ //$result2= $conn->query($sql2);
  echo " <table style='width:100%'>
  <tr>
  <th>Cedula</th>
@@ -27,7 +27,7 @@ if(strlen($cedula)==10){
  </tr>";
 
 //-----------------
-
+/*
 echo " <table style='width:100%'>
 <tr>
 <th>Telefono</th>
@@ -37,7 +37,7 @@ echo " <table style='width:100%'>
 <th></th>
 <th></th>
 </tr>";
-
+*/
 
  if ($result->num_rows > 0) {
  while($row = $result->fetch_assoc()) {
@@ -51,7 +51,7 @@ echo " <table style='width:100%'>
  echo " <td>  . $row[''] "
  echo "</tr>";
 
- if ($result2->num_rows >0){
+ /*if ($result2->num_rows >0){
     while ($row = $result2->fetch_assoc()){
         echo "<tr>";
         echo " <td>" . $row['telf_numero'] . "</td>";
@@ -60,7 +60,7 @@ echo " <table style='width:100%'>
         echo " <td>  . $row[''] "
         echo "</tr>";        
     }
-}
+}*/
 
  }
  } else {
