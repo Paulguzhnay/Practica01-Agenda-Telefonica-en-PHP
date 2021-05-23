@@ -1,5 +1,5 @@
 
-function buscarPorCedula() {
+function buscarCE() {
     var cedula = document.getElementById("cedula").value;
     console.log(length(cedula))
     if (cedula == "") {

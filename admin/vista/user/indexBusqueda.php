@@ -4,7 +4,7 @@
     <link href="../../../css/estilo.css" rel="stylesheet" />
     <link href="../../../css/layout.css" rel="stylesheet" />
     <meta charset="UTF-8">
-    <script type="text/javascript" src="../../../config/buscarPorCedula.js"></script>
+    <script type="text/javascript" src="../../../config/buscarCE.js"></script>
     <title>Gestión de Usuarios</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     BOTON CEDULA 
 -->
     <br>
-    <form onsubmit="return buscarPorCedula()">
+    <form onsubmit="return buscarCE()">
         <div id="Busqueda"><h1>Buscar por Cédula o Correo</h1></div>
         <br>
         <input type="text" id="cedula" name="cedula" value="">
