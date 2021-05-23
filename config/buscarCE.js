@@ -18,7 +18,7 @@ function buscarCE() {
     console.log (document.getElementById("informacion"))
     }
     };
-    xmlhttp.open("GET","../../../config/buscar.php?cedula="+cedula,true);
+    xmlhttp.open("GET","buscar.php?cedula="+cedula,true);
     xmlhttp.send();
     }
     return false;
