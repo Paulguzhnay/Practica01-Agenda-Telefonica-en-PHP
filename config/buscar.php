@@ -14,28 +14,27 @@
  $result = $conn->query($sql);
  $result2= $conn->query($sql2);
  echo " <table style='width:100%'>
+
+ <tr>
+ <th>  colspan="5" Datos Personales </th>
+  <th> colspan ="3" Telefono</th>
+
+ </tr>
+ //----------------------------
  <tr>
  <th>Cedula</th>
  <th>Nombres</th>
  <th>Apellidos</th>
  <th>Correo</th>
  <th>Fecha Nacimiento</th>
- <th></th>
- <th></th>
- <th></th>
+ <th>Telefono</th>
+ <th>Tipo</th>
+ <th>Operadora</th>
  </tr>";
 
 //-----------------
 
-echo " <table style='width:100%'>
-<tr>
-<th>Telefono</th>
-<th>Operadora</th>
-<th>Tipo</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>";
+
 
 
  if ($result->num_rows > 0) {
@@ -49,16 +48,16 @@ echo " <table style='width:100%'>
  echo " <td>" . $row['usu_nacimiento'] . "</td>";
  echo "</tr>";
 
- if ($result2->num_rows >0){
-    while ($row = $result2->fetch_assoc()){
-        echo "<tr>";
-        echo " <td>" . $row['telf_numero'] . "</td>";
-        echo " <td>" . $row['telf_operadora'] ."</td>";
-        echo " <td>" . $row['telf_tipo'] . "</td>";
-        echo " <td>  . $row[''] "
-        echo "</tr>";        
+    if ($result2->num_rows >0){
+        while ($row = $result2->fetch_assoc()){
+            echo "<tr>";
+            echo " <td>" . $row['telf_numero'] . "</td>";
+            echo " <td>" . $row['telf_operadora'] ."</td>";
+            echo " <td>" . $row['telf_tipo'] . "</td>";
+            echo " <td>  . $row[''] "
+            echo "</tr>";        
+        }
     }
-}
 
  }
  } else {
