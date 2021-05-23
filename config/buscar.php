@@ -3,7 +3,7 @@
  include "conexionBD.php";
  $cedula = $_GET['cedula'];
  //echo "Hola " . $cedula;
-
+echo("<h1>Resultados</h1>");
 if(strlen($cedula)==10){
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
     $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula'";
@@ -48,12 +48,13 @@ if(strlen($cedula)==10){
     }
     } else {
     echo "<tr>";
-    echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
+    echo " <td colspan='8'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
     }
     echo "</table>";
     $conn->close();
 }else {
+    $cedulacom = 0;
         $sql = "SELECT usu_cedula FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
         $result5 = $conn->query($sql);
         while ($row1 = $result5->fetch_assoc()){
@@ -102,7 +103,7 @@ if(strlen($cedula)==10){
         }
         } else {
         echo "<tr>";
-        echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
+        echo " <td colspan='8'> No existen usuarios registradas en el sistema </td>";
         echo "</tr>";
         }
         echo "</table>";

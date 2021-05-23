@@ -7,7 +7,7 @@
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $_SESSION['isLogged'] = TRUE;
-        header("Location: ../../admin/vista/user/indexBusqueda.php");
+        header("Location: indexBusqueda.php");
     } else {
         header("Location: ../vista/login.html");
     }
