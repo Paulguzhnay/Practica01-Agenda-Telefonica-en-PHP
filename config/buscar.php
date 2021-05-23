@@ -6,7 +6,7 @@
 
 if(strlen($cedula)==10){
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
-    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula';
+    $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula'";
 }else {
     $sql = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
 }
