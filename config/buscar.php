@@ -55,14 +55,15 @@ if(strlen($cedula)==10){
     $conn->close();
 }else {
         $sql = "SELECT usu_cedula FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
-        $result = $conn->query($sql);
-        while ($row1 = $result->fetch_assoc()){
+        $result5 = $conn->query($sql);
+        while ($row1 = $result5->fetch_assoc()){
             if($row1['usu_cedula']){
                 $cedulacom = $row1['usu_cedula'];
             }
         }
-        echo($cedulacom);
-        $sql2 ="SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
+        $sql3 = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
+        $sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
+        $result = $conn->query($sql3);
         $result2= $conn->query($sql2);
         //cambiar la consulta para puede buscar por ocurrencias de letras
         //$result2= $conn->query($sql2);
@@ -90,10 +91,9 @@ if(strlen($cedula)==10){
         echo " <td>" . $row['usu_apellido'] . "</td>";
         echo " <td>" . $row['usu_mail'] . "</td>";
         echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        
             if ($result2->num_rows > 0){
                 while ($row = $result2->fetch_assoc()){
-                echo " <td>" . $row['telf_numero'] . "</td>";
+                    echo " <td>" . $row['telf_numero'] . "</td>";
                     echo " <td>" . $row['telf_operadora'] ."</td>";
                     echo " <td>" . $row['telf_tipo'] . "</td>";
                     echo "</tr>";
