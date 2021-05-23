@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,3 +43,4 @@
         <br/>&copy; Todos los derechos reservados
 </footer>
 </html>
+>>>>>>> 4e89b4a188c4d8a13415eb3766a4bd2403969146
