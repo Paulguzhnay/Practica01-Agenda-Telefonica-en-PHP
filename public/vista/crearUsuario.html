@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Registrarse</title>
+    <script type="text/javascript" src="../controladores/validaciones.js"></script>
     <link href="../../css/estilo.css" rel="stylesheet" />
     <link href="../../css/layout.css" rel="stylesheet" />
 </head>
@@ -10,7 +11,7 @@
     <header>
         <a href="../../index.html"><img src="../../images/Agenda Telefonica.jpg"></a>
     </header>
-    <form id="formulario01" method="POST" action="../controladores/crear_usuario.php" onsubmit="return validarCamposObligatorios()" >
+    <form id="formulario01" method="POST" action="../controladores/crear-usuario.php" onsubmit="return validarCamposObligatorios()" >
     <h1>Crear Usuario</h1>
     <label for="cedula">Cedula (*)</label>
     <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula ..." onkeyup="return validarCedula(this)"/>
@@ -23,9 +24,6 @@
     <label for="apellidos">Apelidos (*)</label>
     <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos ..." onkeyup="return validarApellido(this)" />
     <span id="mensajeApellidos" class="error"></span>
-    <label for="telefono">Teléfono (*)</label>
-    <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico..." onkeyup="return validarTelefono(this)" />
-    <span id="mensajeTelefono" class="error"></span>
     <br>
         <label for="fecha">Fecha Nacimiento (*)</label>
         <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="Ingrese su fecha de nacimiento ..." />
@@ -40,16 +38,15 @@
         <span id="mensajeContrasenia" class="error"></span>
     <br>
     <label for="rol">Rol del Usuario (*)</label>
-    <select>
+    <select id="rol" name="rol" >
         <option>Usuario</option>
         <option>Administrador</option>
     </select>
-    <form>
         <br><label for="telefono">Teléfono (*)</label>
         <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico..." onkeyup="return validarTelefono(this)" />
         <span id="mensajeTelefono" class="error"></span>
         <br><label for="rol">Tipo de Teléfono (*)</label>
-        <select>
+        <select id="tipo" name="tipo">
             <option>Móvil</option>
             <option>Convencional</option>
             <option>Oficina</option>
@@ -57,15 +54,13 @@
             <option>Otro</option>
         </select>
         <br><label for="rol">Operadora (*)</label>
-        <select>
+        <select id="operadora" name="operadora"> 
             <option>Claro</option>
             <option>Movistar</option>
             <option>Tuenti</option>
             <option>CNT</option>
             <option>Otro</option>
         </select><br>
-        <input type="button" id="crear" name="crear" value="Agregar Otro Teléfono" /> 
-    </form>
         <input type="submit" id="crear" name="crear" value="Crear Usuario" /> 
         <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
     </form>
