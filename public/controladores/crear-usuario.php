@@ -38,7 +38,7 @@
         $tipo = isset($_POST["tipo"]) ? trim($_POST["tipo"]): null;
         $operadora = isset($_POST["operadora"]) ? trim($_POST["operadora"]): null;
         $sql = "INSERT INTO usuarios VALUES (0, '$cedula', '$nombres', '$apellidos', '$correo', MD5('$contrasena'), '$fechaNacimiento', null, null, 'N','$rol')";
-        $sql2 =  "INSERT INTO telefonos VALUES (0, '$telefono', '$operadora', '$tipo', '$cedula')";
+        $sql2 =  "INSERT INTO telefonos VALUES (0, '$telefono', '$operadora', '$tipo','N', '$cedula')";
         if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
             echo "<h1>Se ha creado los datos personales correctamemte!!!</h1>";
         } else {

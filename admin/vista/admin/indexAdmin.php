@@ -47,8 +47,7 @@
         echo " <td>" . $row['usu_eliminado'] . "</td>";
         echo " <td> <a href='eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
         echo " <td> <a href='modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
-        echo " <td> <a href='cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar
-       contraseña</a> </td>";
+        echo " <td> <a href='cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
         echo "</tr>";
        }
 
@@ -58,6 +57,24 @@
  echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
  echo "</tr>";
  }
+//-----------------------------------
+echo " <tr>";
+echo "<td><br> <br> </td>";
+echo "</tr>";
+
+
+ //-----------------------------------
+
+ echo " <td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>";
+
+
+//---------------------
+echo " <tr>";
+echo "<td><br> <br> </td>";
+echo "</tr>";
+///------------------
+
+
  echo " <td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>";
 
  $conn->close();
