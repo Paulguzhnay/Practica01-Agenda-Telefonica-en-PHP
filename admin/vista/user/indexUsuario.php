@@ -15,10 +15,10 @@
 
     <br>
     <?php
- // session_start();
-//  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-//  header("Location: /SistemaDeGestion/public/vista/login.html");
- // }
+  session_start();
+  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+  header("Location: /SistemaDeGestion/public/vista/login.html");
+  }
  include '../../../config/conexionBD.php';
  $mail = $_GET['mail'];
  $sql = "SELECT usu_id FROM usuario WHERE usu_mail=$mail";
