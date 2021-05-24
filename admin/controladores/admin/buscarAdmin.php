@@ -5,7 +5,11 @@
  //echo "Hola " . $cedula;
 echo("<h1>Resultados</h1>");
 if(strlen($cedula)==10){
-    $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_tipo,telf_operadora FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id";    $result = $conn->query($sql);
+
+
+    $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_operadora,telf_tipo 
+    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula'";    
+    $result = $conn->query($sql);
     $result2= $conn->query($sql);
     //cambiar la consulta para puede buscar por ocurrencias de letras
     //$result2= $conn->query($sql2);
@@ -59,7 +63,8 @@ if(strlen($cedula)==10){
         }
         //$sql3 = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
         //$sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
-        $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_tipo,telf_operadora FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id";
+        $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_tipo,telf_operadora
+         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedulacom'";
         //$result = $conn->query($sql3);
         $result2= $conn->query($sql2);
         //cambiar la consulta para puede buscar por ocurrencias de letras

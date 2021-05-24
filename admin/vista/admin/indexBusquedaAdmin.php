@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="../../index.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+        <a href="indexAdmin.php"><img src="../../../images/Agenda Telefonica.jpg"></a>
     </header>
 <!--
     BOTON CEDULA 
