@@ -69,8 +69,8 @@
             echo " <td>" . $row['telf_numero'] . "</td>";
             echo " <td>" . $row['telf_operadora'] ."</td>";
             echo " <td>" . $row['telf_tipo'] . "</td>";
-            echo " <td> <a href='eliminar.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
-            echo " <td> <a href='modificar.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
+            echo " <td> <a href='eliminar_numero.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
+            echo " <td> <a href='modificar-numero.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
             echo "</tr>";
         } 
     } else {
