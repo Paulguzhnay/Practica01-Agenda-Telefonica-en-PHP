@@ -6,10 +6,10 @@
 </head>
 <body>
  <?php
- //session_start();
- //if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- //header("Location: /SistemaDeGestion/public/vista/login.html");
- //}
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+ header("Location: ../../../public/vista/loggin.html");
+ }
  $codigo = $_GET["id"];
  $sql = "SELECT * FROM usuarios where usu_id=$codigo";
 

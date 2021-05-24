@@ -6,10 +6,10 @@
 </head>
 <body>
  <?php
-  //session_start();
-  //if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-  //header("Location: /SistemaDeGestion/public/vista/login.html");
-  //}
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+ header("Location: ../../../public/vista/loggin.html");
+ }
  $codigo = $_GET["id"];
  ?>
  <form id="formulario01" method="POST" action="../../controladores/admin/cambiarContra.php">

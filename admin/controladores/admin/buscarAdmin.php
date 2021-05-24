@@ -1,4 +1,8 @@
 <?php
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+ header("Location: ../../../public/vista/loggin.html");
+ }
  //incluir conexión a la base de datos
  include "../../../config/conexionBD.php";
  $cedula = $_GET['cedula'];
@@ -64,7 +68,7 @@ if(strlen($cedula)==10){
         //$sql3 = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
         //$sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
         $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_tipo,telf_operadora
-         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedulacom'";
+         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula'";
         //$result = $conn->query($sql3);
         $result2= $conn->query($sql2);
         //cambiar la consulta para puede buscar por ocurrencias de letras
