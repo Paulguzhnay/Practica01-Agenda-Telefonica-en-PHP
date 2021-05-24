@@ -9,33 +9,48 @@
 </head>
 <body>
     <header>
-        <a href="../../../../index.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+        <a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
     </header>
-<!--
-    BOTON CEDULA 
--->
+
 
     <br>
-
-<!--
-    TABLA DE OPCIONES 
--->
-<table style='width:100%' border='1' align='center'>
-<table style="width:100%">
- <tr>
-
-    <th> <a href="../../controladores/user/modificar.php">Modificar </a></th>
-    <th> <a href="../../controladores/user/eliminar.php"> Eliminar</a></th>
-    <th><a href="../../controladores/user/cambiarContra.php">Cambiar Contraseña</a></th>
- </tr>
- <table style='width:100%' border='1' align='center'>
- </table>
+    <?php
+ // session_start();
+//  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+//  header("Location: /SistemaDeGestion/public/vista/login.html");
+ // }
+ include '../../../config/conexionBD.php';
+ $mail = $_GET['mail'];
+ $sql = "SELECT usu_id FROM usuario WHERE usu_mail=$mail";
+ $result = $conn->query($sql);
+//    TABLA DE OPCIONES 
 
 
-<br>
-<br>
-<br>
+if ($result->num_rows > 0) {
 
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo " <td> <a href='eliminar.php?codigo=" . $row['usu_id'] . "'>Eliminar</a> </td>";
+        echo " <td> <a href='modificar.php?codigo=" . $row['usu_id'] . "'>Modificar</a> </td>";
+        echo " <td> <a href='cambiar_contrasena.php?codigo=" . $row['usu_id'] . "'>Cambiar
+       contraseña</a> </td>";
+        echo "</tr>";
+       }
+
+       
+ } else {
+ echo "<tr>";
+ echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
+ echo "</tr>";
+ }
+ echo " <td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>";
+
+ $conn->close();
+
+
+
+
+?>
 
 </body>
 <footer>
