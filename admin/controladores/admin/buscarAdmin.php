@@ -1,4 +1,8 @@
 <?php
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+ header("Location: ../../../public/vista/loggin.html");
+ }
  //incluir conexión a la base de datos
  include "../../../config/conexionBD.php";
  $cedula = $_GET['cedula'];

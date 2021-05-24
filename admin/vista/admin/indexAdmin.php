@@ -27,10 +27,10 @@
  </tr>
  </tr>
  <?php
-  //session_start();
-  //if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-  //header("Location: /SistemaDeGestion/public/vista/login.html");
-  //}
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+ header("Location: ../../../public/vista/loggin.html");
+ }
  include '../../../config/conexionBD.php';
  $sql = "SELECT * FROM usuarios ";
  $result = $conn->query($sql);
