@@ -12,7 +12,7 @@
         header("Location: ../../admin/vista/admin/indexAdmin.php");
     } else if ($result2->num_rows > 0) {
         $_SESSION['isLogged'] = TRUE;
-        header("Location: ../../admin/vista/user/indexUsuario.php");
+        header("Location: ../../admin/vista/user/indexUsuario.php?correo=$usuario");
     } else {
         header("Location: ../vista/login.html");
     }
