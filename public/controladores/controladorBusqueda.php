@@ -13,7 +13,7 @@
     }
     echo($rol);
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-        header("Location: ../../public/vista/login.html");
+        header("Location: indexBusqueda.php");
     }else if((($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE) and $rol==='Administrador' ){
         header("Location: ../../admin/vista/admin/indexAdmin.php");
 
