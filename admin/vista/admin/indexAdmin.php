@@ -16,16 +16,24 @@
 -->
 
     <br>
-    <table style="width:100%">
+    <table style="width:100%" border='1' align='center'  >
+  
  <tr>
+ <th colspan ='6'>  Datos Personales</th>
+ <th colspan ='3'>  Opciones Administrador</th>
+</tr>
+<tr>
  <th>Cedula</th>
  <th>Nombres</th>
  <th>Apellidos</th>
  <th>Correo</th>
  <th>Fecha Nacimiento</th>
  <th>Estado</th>
- </tr>
- </tr>
+ <th>Eliminar Usuario</th>
+ <th>Modificar Datos</th>
+ <th>Cambiar contraseña</th>
+</tr>
+
  <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
@@ -72,7 +80,24 @@
 
  $conn->close();
  ?>
- </table>
+
+</table>
+<br>
+<br>
+<br>
+<table >
+<td> <a href='../../../public/vista/crearUsuario.html'>Agregar </a> </td>
+<td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>
+<td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>
+
+</table>
+<br>
+<br>
+<br>    
 
 </body>
+<footer>
+      Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 
+        <br/>&copy; Todos los derechos reservados
+</footer>
 </html>
