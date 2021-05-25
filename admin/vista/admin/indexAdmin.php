@@ -19,7 +19,7 @@
     <table style="width:100%" border='1' align='center'  >
   
  <tr>
- <th colspan ='6'>  Datos Personales</th>
+ <th colspan ='5'>  Datos Personales</th>
  <th colspan ='3'>  Opciones Administrador</th>
 </tr>
 <tr>
@@ -28,7 +28,6 @@
  <th>Apellidos</th>
  <th>Correo</th>
  <th>Fecha Nacimiento</th>
- <th>Estado</th>
  <th>Eliminar Usuario</th>
  <th>Modificar Datos</th>
  <th>Cambiar contraseña</th>
@@ -40,7 +39,7 @@
  header("Location: ../../../public/vista/login.html");
  }
  include '../../../config/conexionBD.php';
- $sql = "SELECT * FROM usuarios ";
+ $sql = "SELECT * FROM usuarios WHERE usu_eliminado='N' ";
  $result = $conn->query($sql);
 
  if ($result->num_rows > 0) {
@@ -52,7 +51,6 @@
         echo " <td>" . $row['usu_apellido'] . "</td>";
         echo " <td>" . $row['usu_mail'] . "</td>";
         echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        echo " <td>" . $row['usu_eliminado'] . "</td>";
         echo " <td> <a href='eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
         echo " <td> <a href='modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
         echo " <td> <a href='cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
@@ -63,8 +61,8 @@
     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
  }
-
-
+ $usuario = $_SESSION['usuario'];
+echo($usuario);
  $conn->close();
  ?>
 

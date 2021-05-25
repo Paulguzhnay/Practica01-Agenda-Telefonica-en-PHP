@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+    <a href="../../../index.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
         
     </header>
     <br>
@@ -19,7 +19,7 @@
      header("Location: ../../../public/vista/login.html");
      }
     include '../../../config/conexionBD.php';
-    $correo = $_GET['correo'];
+    $correo  = $_SESSION['usuario'];
     echo("<h1>Datos Personales</h1>");
     $sql = "SELECT usu_cedula FROM usuarios WHERE usu_mail = '$correo'";
     $result5 = $conn->query($sql);

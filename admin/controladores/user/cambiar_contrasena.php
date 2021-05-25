@@ -13,7 +13,8 @@
             <ul>
             <li><a href="../../../public/controladores/indexBusqueda.php">Búsqueda de Contactos</a></li>
             <li><a href="../../../public/vista/crearUsuario.html">Registrarse</a></li>
-            <li><a href="../../../public/vista/login.html">Iniciar Sesión</a></li>
+            <li><a href="../../../public/controladores/controlodorSesion.php">Iniciar Sesión</a></li>
+
             </ul>
     </nav>
 <?php
