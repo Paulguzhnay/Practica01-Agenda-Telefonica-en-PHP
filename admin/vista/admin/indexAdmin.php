@@ -63,20 +63,7 @@
     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
  }
-//-----------------------------------
-    echo " <tr>";
-    echo "<td><br> <br> </td>";
-    echo "</tr>";
- //-----------------------------------
-    echo " <td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>";
-//---------------------
-    echo " <tr>";
-    echo "<td><br> <br> </td>";
-    echo "</tr>";
-///------------------
- echo " <td> <form id='formulario01' method='POST' action='../../../config/cerrarSesion.php'>
- <input type='submit' id='cerrar' name='cerrar' value='Cerrar Sesión' /> </form> 
- </td>";
+
 
  $conn->close();
  ?>
@@ -88,9 +75,11 @@
 <table >
 <td> <a href='../../../public/vista/crearUsuario.html'>Agregar </a> </td>
 <td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>
-<td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>
 
 </table>
+<form id='formulario01' method='POST' action='../../../config/cerrarSesion.php'>
+ <input type='submit' id='cerrar' name='cerrar' value='Cerrar Sesión' /> </form> 
+
 <br>
 <br>
 <br>    
