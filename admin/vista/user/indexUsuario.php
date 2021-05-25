@@ -85,6 +85,8 @@
     echo "</table>";
     $conn->close();
     ?>
+    <form id='formulario01' method='POST' action='agregar-telefono.php'>
+    <input type='submit' id='agregar' name='agregar' value='Agregar Nuevo Teléfono' /> </form> 
     <form id='formulario01' method='POST' action='../../../config/cerrarSesion.php'>
     <input type='submit' id='cerrar' name='cerrar' value='Cerrar Sesión' /> </form> 
 </body>
