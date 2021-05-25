@@ -29,7 +29,7 @@
  <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- header("Location: ../../../public/vista/loggin.html");
+ header("Location: ../../../public/vista/login.html");
  }
  include '../../../config/conexionBD.php';
  $sql = "SELECT * FROM usuarios ";
@@ -50,32 +50,25 @@
         echo " <td> <a href='cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
         echo "</tr>";
        }
-
-       
  } else {
- echo "<tr>";
- echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
- echo "</tr>";
+    echo "<tr>";
+    echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
+    echo "</tr>";
  }
 //-----------------------------------
-echo " <tr>";
-echo "<td><br> <br> </td>";
-echo "</tr>";
-
-
+    echo " <tr>";
+    echo "<td><br> <br> </td>";
+    echo "</tr>";
  //-----------------------------------
-
- echo " <td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>";
-
-
+    echo " <td> <a href='indexBusquedaAdmin.php'>Buscar </a> </td>";
 //---------------------
-echo " <tr>";
-echo "<td><br> <br> </td>";
-echo "</tr>";
+    echo " <tr>";
+    echo "<td><br> <br> </td>";
+    echo "</tr>";
 ///------------------
-
-
- echo " <td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>";
+ echo " <td> <form id='formulario01' method='POST' action='../../../config/cerrarSesion.php'>
+ <input type='submit' id='cerrar' name='cerrar' value='Cerrar Sesión' /> </form> 
+ </td>";
 
  $conn->close();
  ?>
