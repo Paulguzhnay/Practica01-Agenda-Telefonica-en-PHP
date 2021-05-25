@@ -49,8 +49,8 @@
         echo " <td>" . $row["usu_cedula"] . "</td>";
         echo " <td>" . $row['usu_nombre'] ."</td>";
         echo " <td>" . $row['usu_apellido'] . "</td>";
-        echo " <td>" . $row['usu_mail'] . "</td>";
-        echo " <td>" . $row['usu_nacimiento'] . "</td>";
+        echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
+        echo " <td>" . $row['usu_nacimiento'] . "</td>";      
         echo " <td> <a href='eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
         echo " <td> <a href='modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
         echo " <td> <a href='cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
