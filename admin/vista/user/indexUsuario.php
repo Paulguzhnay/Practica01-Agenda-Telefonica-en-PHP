@@ -83,10 +83,10 @@
     echo "</tr>";
     }
     echo "</table>";
-    echo "<input id = 'crear' type='button' value='Agregar Nuevo Teléfono'>";
-    echo "<br><td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesión</a> </td>";
     $conn->close();
     ?>
+    <form id='formulario01' method='POST' action='../../../config/cerrarSesion.php'>
+    <input type='submit' id='cerrar' name='cerrar' value='Cerrar Sesión' /> </form> 
 </body>
 <footer>
       Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 

@@ -19,11 +19,8 @@
     session_start();
     $_SESSION['isLogged'] = FALSE;
     session_destroy();
-    if($_SESSION['isLogged'] = TRUE){
-        echo("Sesion out");
-        header("Location ../Practica01-Agenda-Telefonica-en-PHP/index.html");
-    }
-    
+    echo("<h1>Sesión Cerrada</h1>");
+    header("Location ../Practica01-Agenda-Telefonica-en-PHP/index.html");
 ?>
 </body>
 <footer>
