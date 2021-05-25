@@ -9,9 +9,12 @@
     $result2 = $conn->query($sql2);
     if ($result->num_rows > 0) {
         $_SESSION['isLogged'] = TRUE;
+        $_SESSION['usuario']= $usuario; 
         header("Location: ../../admin/vista/admin/indexAdmin.php");
+        
     } else if ($result2->num_rows > 0) {
         $_SESSION['isLogged'] = TRUE;
+        $_SESSION['usuario']= $usuario;
         header("Location: ../../admin/vista/user/indexUsuario.php?correo=$usuario");
     } else {
         header("Location: ../vista/login.html");
