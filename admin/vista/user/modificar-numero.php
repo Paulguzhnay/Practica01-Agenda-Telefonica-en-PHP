@@ -12,6 +12,10 @@
     </header>
     <br>
  <?php
+  session_start();
+  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+  header("Location: ../../../public/vista/login.html");
+  }
     $codigo = $_GET["codigo"];
     $sql = "SELECT * FROM telefonos where telf_id = $codigo";
     include '../../../config/conexionBD.php';

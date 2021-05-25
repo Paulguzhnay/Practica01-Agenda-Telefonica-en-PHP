@@ -17,7 +17,10 @@
             </ul>
     </nav>
 <?php
-
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+    header("Location: ../../../public/vista/login.html");
+    }
     //incluir conexión a la base de datos
     include '../../../config/conexionBD.php';
     $codigo = $_POST["codigo"];

@@ -21,8 +21,9 @@
     session_destroy();
     if($_SESSION['isLogged'] = TRUE){
         echo("Sesion out");
+        header("Location ../Practica01-Agenda-Telefonica-en-PHP/index.html");
     }
-    header("Location ../Practica01-Agenda-Telefonica-en-PHP/index.htm");
+    
 ?>
 </body>
 <footer>

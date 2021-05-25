@@ -10,6 +10,10 @@
 <body>
 <a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
  <?php
+  session_start();
+  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+  header("Location: ../../../public/vista/login.html");
+  }
     $codigo = $_GET["codigo"];
  ?>
  <form id="formulario01" method="POST" action="../../controladores/user/cambiar_contrasena.php">
