@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
- <title>Modificar datos de persona </title>
+    <meta charset="UTF-8">
+    <title>Modificar datos de persona </title>
+    <link href="../../../css/estilo.css" rel="stylesheet" />
+    <link href="../../../css/layout.css" rel="stylesheet" />
 </head>
 <body>
+<a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+    <nav>
+            <ul>
+            <li><a href="../../../public/controladores/indexBusqueda.php">Búsqueda de Contactos</a></li>
+            <li><a href="../../../public/vista/crearUsuario.html">Registrarse</a></li>
+            <li><a href="../../../public/vista/login.html">Iniciar Sesión</a></li>
+            </ul>
+    </nav>
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- header("Location: ../../../public/vista/loggin.html");
+    header("Location: ../../../public/vista/login.html");
  }
  //incluir conexión a la base de datos
  include '../../../config/conexionBD.php';
  $codigo = $_POST["codigo"];
- echo ($codigo);
  $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
  $nombres = isset($_POST["nombre"]) ? mb_strtoupper(trim($_POST["nombre"]), 'UTF-8') : null;
  $apellidos = isset($_POST["apellido"]) ? mb_strtoupper(trim($_POST["apellido"]), 'UTF-8') : null;
@@ -30,12 +39,16 @@
  "usu_fecha_modificacion = '$fecha' " .
  "WHERE usu_id = $codigo";
  if ($conn->query($sql) === TRUE) {
- echo "Se ha actualizado los datos personales correctamemte!!!<br>";
+    echo "<h1>Datos del Usuario Actualizados</h1>";
  } else {
- echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
  }
- echo "<a href='../../vista/admin/indexAdmin.php'>Regresar</a>";
+    echo "<a href='../../vista/admin/indexAdmin.php'>Regresar</a>";
  $conn->close();
 ?>
 </body>
+<footer>
+      Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 
+        <br/>&copy; Todos los derechos reservados
+</footer>
 </html>

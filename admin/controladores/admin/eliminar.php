@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
- <title>Eliminar datos de persona </title>
+    <meta charset="UTF-8">
+    <title>Eliminar datos de persona </title>
+    <link href="../../../css/estilo.css" rel="stylesheet" />
+    <link href="../../../css/layout.css" rel="stylesheet" />
 </head>
 <body>
+<a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+    <nav>
+            <ul>
+            <li><a href="../../../public/controladores/indexBusqueda.php">Búsqueda de Contactos</a></li>
+            <li><a href="../../../public/vista/crearUsuario.html">Registrarse</a></li>
+            <li><a href="../../../public/vista/login.html">Iniciar Sesión</a></li>
+            </ul>
+    </nav>
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- header("Location: ../../../public/vista/loggin.html");
+ header("Location: ../../../public/vista/login.html");
  }
  //incluir conexión a la base de datos
  include '../../../config/conexionBD.php';
@@ -34,7 +44,7 @@ $sql3 = "UPDATE telefonos SET telf_eliminado='S'  WHERE usuarios_usu_id ='$cedul
 
  if ($conn->query($sql) === TRUE ) {
      if($conn->query($sql3)==TRUE){
-        echo "<p>Se ha eliminado los datos correctamemte!!!</p>";
+        echo "<h1>Se eliminó el usuario correctamente</h1>";
      }else {
         echo "<p>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
         }
@@ -44,4 +54,8 @@ $sql3 = "UPDATE telefonos SET telf_eliminado='S'  WHERE usuarios_usu_id ='$cedul
 
 ?>
 </body>
+<footer>
+      Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 
+        <br/>&copy; Todos los derechos reservados
+</footer>
 </html>
