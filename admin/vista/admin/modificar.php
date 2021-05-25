@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
- <title>Modificar datos de persona</title>
+    <meta charset="UTF-8">
+    <title>Modificar datos de persona</title>
+    <link href="../../../css/estilo.css" rel="stylesheet" />
+    <link href="../../../css/layout.css" rel="stylesheet" />
 </head>
 <body>
- <?php
- session_start();
- if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- header("Location: ../../../public/vista/loggin.html");
- }
- $codigo = $_GET["id"];
+    <a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+    <?php
+        session_start();
+        if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+            header("Location: ../../../public/vista/login.html");
+        }
+        $codigo = $_GET["id"];
 
- $sql = "SELECT * FROM usuarios where usu_id=$codigo";
- $sql2 = "SELECT usu_cedula FROM usuarios WHERE usu_id = '$codigo'";
- include '../../../config/conexionBD.php';
- $result = $conn->query($sql);
- $result2 = $conn->query($sql2);
+        $sql = "SELECT * FROM usuarios where usu_id=$codigo";
+        $sql2 = "SELECT usu_cedula FROM usuarios WHERE usu_id = '$codigo'";
+        include '../../../config/conexionBD.php';
+        $result = $conn->query($sql);
+        $result2 = $conn->query($sql2);
 
- while ($row1 = $result2->fetch_assoc()){
-    if($row1['usu_cedula']){
-        $cedulacom = $row1['usu_cedula'];
-    }
-}
+        while ($row1 = $result2->fetch_assoc()){
+            if($row1['usu_cedula']){
+            $cedulacom = $row1['usu_cedula'];
+        }
+        }
 
 $sql3 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
 $result3= $conn->query($sql3);
@@ -68,4 +71,8 @@ required placeholder="Ingrese el correo electrónico ..."/>
  $conn->close();
  ?> 
 </body>
+<footer>
+      Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 
+        <br/>&copy; Todos los derechos reservados
+</footer>
 </html>

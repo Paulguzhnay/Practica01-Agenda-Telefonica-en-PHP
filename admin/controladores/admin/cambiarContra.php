@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
- <title>Modificar datos de persona </title>
+    <meta charset="UTF-8">
+    <title>Contraseña del Usuario </title>
+    <link href="../../../css/estilo.css" rel="stylesheet" />
+    <link href="../../../css/layout.css" rel="stylesheet" />
 </head>
 <body>
+<a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
+    <nav>
+            <ul>
+            <li><a href="../../../public/controladores/indexBusqueda.php">Búsqueda de Contactos</a></li>
+            <li><a href="../../../public/vista/crearUsuario.html">Registrarse</a></li>
+            <li><a href="../../../public/vista/login.html">Iniciar Sesión</a></li>
+            </ul>
+    </nav>
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
@@ -27,17 +37,21 @@ usu_password=MD5('$contrasena1')";
  "usu_fecha_modificacion = '$fecha' " .
  "WHERE usu_id = $codigo";
  if ($conn->query($sqlContrasena2) === TRUE) {
- echo "Se ha actualizado la contraseña correctamemte!!!<br>"; 
+ echo "<h1>Contraseña de usuario actualizada</h1>"; 
  } else {
      
  echo "<p>Error: " . mysqli_error($conn) . "</p>";
  }
 
  }else{
- echo "<p>La contraseña actual no coincide con nuestros registros!!! </p>";
+ echo "<h1>La contraseña actual es incorrecta </h1>";
  }
  echo "<a href='../../vista/admin/indexAdmin.php'>Regresar</a>";
  $conn->close();
 ?>
 </body>
+<footer>
+      Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 
+        <br/>&copy; Todos los derechos reservados
+</footer>
 </html>
