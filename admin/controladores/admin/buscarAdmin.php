@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
@@ -46,8 +48,8 @@ if(strlen($cedula)==10){
     echo " <td>" . $row['usu_apellido'] . "</td>";
     echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
     echo " <td>" . $row['usu_nacimiento'] . "</td>";
-    echo " <td> <a class:telefono href=tel=>" . $row['telf_numero'] . "</a> </td>";
-echo " <td>" . $row['telf_operadora'] ."</td>";
+    echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
+    echo " <td>" . $row['telf_operadora'] ."</td>";
     echo " <td>" . $row['telf_tipo'] . "</td>";
     echo " <td> <a href='../admin/eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
     echo " <td> <a href='../admin/modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
@@ -74,20 +76,27 @@ echo " <td>" . $row['telf_operadora'] ."</td>";
     if ($result6->num_rows > 0) {
         while($row = $result6->fetch_assoc()) {
             echo "<tr>";
-            echo " <td>" . $row['telf_numero'] . "</td>";
+            echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
             echo " <td>" . $row['telf_operadora'] ."</td>";
             echo " <td>" . $row['telf_tipo'] . "</td>";
             echo " <td> <a href='eliminar-telf.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
+            echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
         } 
     } else {
     echo "<tr>";
     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
+    echo "</table>";
     }
-
+   // echo "<form id='formulario01' method='POST' action='agregar-telf.php'>
+    //<input type='submit' id='agregar' name='agregar' value='Agregar Nuevo Teléfono' /> </form>";
     $conn->close();
+    ?>
+
+
+<?php
 }else {
     $cedulacom = 0;
    
@@ -137,7 +146,7 @@ echo " <td>" . $row['telf_operadora'] ."</td>";
         echo " <td>" . $row['usu_apellido'] . "</td>";
         echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
         echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        echo " <td> <a class:telefono href=tel=>" . $row['telf_numero'] . "</a> </td>";
+        echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
         echo " <td>" . $row['telf_operadora'] ."</td>";
         echo " <td>" . $row['telf_tipo'] . "</td>";
         echo " <td> <a href='../admin/eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
@@ -164,11 +173,12 @@ echo " <td>" . $row['telf_operadora'] ."</td>";
     if ($result6->num_rows > 0) {
         while($row = $result6->fetch_assoc()) {
             echo "<tr>";
-            echo " <td>" . $row['telf_numero'] . "</td>";
+            echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
             echo " <td>" . $row['telf_operadora'] ."</td>";
             echo " <td>" . $row['telf_tipo'] . "</td>";
             echo " <td> <a href='eliminar-telf.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
+            echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
         } 
     } else {
@@ -176,6 +186,16 @@ echo " <td>" . $row['telf_operadora'] ."</td>";
     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
     }
-        $conn->close();
+
+      
+    $conn->close();
+
         }
 ?>
+
+
+
+
+   
+
+    </html>
