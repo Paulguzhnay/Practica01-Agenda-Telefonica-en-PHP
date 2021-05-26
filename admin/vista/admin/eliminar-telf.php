@@ -23,7 +23,7 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
         ?>
-            <form id="formulario01" method="POST" action="../../controladores/user/eliminar-numero.php">
+            <form id="formulario01" method="POST" action="../../controladores/admin/eliminar-telf.php">
                 <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
                 <label for="numero">Número (*)</label>
                 <input type="text" id="numero" name="numero" value="<?php echo $row["telf_numero"]; ?>"

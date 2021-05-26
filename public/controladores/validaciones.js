@@ -161,7 +161,7 @@ function validarTelefono(elemento){
                 elemento.style.border = '2px red solid'
                 document.getElementById("mensajeTelefono").style.color = "red";
                 document.getElementById("mensajeTelefono").innerHTML = "<br>Teléfono Inválido"
-                if(telefono.length == 7 || telefono.length == 9 ||telefono.length == 10){
+                if(elemento.value.length >8 && elemento.value.length < 11){
                     elemento.style.border = '2px green solid'
                     document.getElementById("mensajeTelefono").style.color = "green";
                     document.getElementById("mensajeTelefono").innerHTML = "<br>Teléfono Válido"

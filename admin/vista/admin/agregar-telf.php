@@ -15,12 +15,15 @@
     </header>
     <br>
     <?php
-     session_start();
-     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-     header("Location: ../../../public/vista/login.html");
-     }
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+    header("Location: ../../../public/vista/login.html");
+    }
+    $codigo = $_GET["codigo"];
+     
      ?>
-    <form id="formulario01" method="POST" action="../../controladores/admin/agregar-telf.php" onsubmit="return validarCamposObligatorios()">
+     
+     <form id="formulario01" method="POST" action="../../controladores/admin/agregar-telf.php">
     <h1>Agregar nuevo número de teléfono</h1>
      </select>
         <br><label for="telefono">Teléfono (*)</label>
