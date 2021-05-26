@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="agregarT.js"></script>
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
@@ -15,8 +16,7 @@ if(strlen($cedula)==10){
     $sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedula' and telf_eliminado='N'";
     $result6= $conn->query($sql2);
 
-    $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id, telf_numero,telf_operadora,telf_tipo 
-    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula' and usu_eliminado = 'N'";    
+    $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id  FROM usuarios  WHERE usu_cedula='$cedula' and usu_eliminado = 'N'";    
    
     $result2= $conn->query($sql);
 
@@ -26,7 +26,6 @@ if(strlen($cedula)==10){
     echo " <table style='width:100%' border='1' align='center'>
     <tr>
     <th colspan='5'>  Datos Personales </th>
-    <th colspan ='3'>  Teléfonos</th>
     </tr>
     <tr>
     <th>Cédula</th>
@@ -34,9 +33,6 @@ if(strlen($cedula)==10){
     <th>Apellidos</th>
     <th>Correo</th>
     <th>Fecha Nacimiento</th>
-    <th>Teléfono</th>
-    <th>Tipo</th>
-    <th>Operadora</th>
     </tr>";
     //-----------------
     if ($result2->num_rows > 0) {
@@ -48,9 +44,6 @@ if(strlen($cedula)==10){
     echo " <td>" . $row['usu_apellido'] . "</td>";
     echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
     echo " <td>" . $row['usu_nacimiento'] . "</td>";
-    echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
-    echo " <td>" . $row['telf_operadora'] ."</td>";
-    echo " <td>" . $row['telf_tipo'] . "</td>";
     echo " <td> <a href='../admin/eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
     echo " <td> <a href='../admin/modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
     echo " <td> <a href='../admin/cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
@@ -66,7 +59,7 @@ if(strlen($cedula)==10){
     echo "</table>";
 
 
-    echo("<h1>Tus Contactos</h1>");
+    echo("<h1>Contactos</h1>");
     echo " <table style='width:100%' border='1' align='center'>
     <tr>
     <th>Telefono</th>
@@ -96,7 +89,6 @@ if(strlen($cedula)==10){
     $conn->close();
     ?>
 
-
 <?php
 }else {
     $cedulacom = 0;
@@ -110,8 +102,8 @@ if(strlen($cedula)==10){
         }
         //$sql3 = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
         //$sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
-        $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id, telf_numero,telf_tipo,telf_operadora
-         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedulacom' and usu_eliminado = 'N'";
+        $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id
+         FROM usuarios  WHERE usu_cedula='$cedulacom' and usu_eliminado = 'N';";
         //$result = $conn->query($sql3);
         $result2= $conn->query($sql2);
 
@@ -126,7 +118,6 @@ if(strlen($cedula)==10){
         echo " <table style='width:100%' border='1' align='center'>
         <tr>
         <th colspan='5'>  Datos Personales </th>
-        <th colspan ='3'>  Teléfonos</th>
         </tr>
         <tr>
         <th>Cédula</th>
@@ -147,9 +138,6 @@ if(strlen($cedula)==10){
         echo " <td>" . $row['usu_apellido'] . "</td>";
         echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
         echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
-        echo " <td>" . $row['telf_operadora'] ."</td>";
-        echo " <td>" . $row['telf_tipo'] . "</td>";
         echo " <td> <a href='../admin/eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
         echo " <td> <a href='../admin/modificar.php?id=" . $row['usu_id'] . "'>Modificar</a> </td>";
         echo " <td> <a href='../admin/cambiarContra.php?id=" . $row['usu_id'] . "'>Cambiar contraseña</a> </td>";
@@ -164,7 +152,7 @@ if(strlen($cedula)==10){
         echo "</table>";
         
 
-    echo("<h1>Tus Contactos</h1>");
+    echo("<h1>Contactos</h1>");
     echo " <table style='width:100%' border='1' align='center'>
     <tr>
     <th>Telefono</th>
@@ -181,18 +169,16 @@ if(strlen($cedula)==10){
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
             echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
-
+            $_SESSION['telid']=$row['telf_id'];
             
         }
         
  
     } else {
     echo "<tr>";
-    echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
+    echo " <td colspan='7'> No existen numeros registrados en el sistema </td>";
     echo "</tr>";
     }
-    echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
-      
     $conn->close();
 
         }
