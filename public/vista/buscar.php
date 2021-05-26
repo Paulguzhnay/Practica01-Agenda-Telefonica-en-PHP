@@ -93,10 +93,10 @@ if(strlen($cedula)==10){
         echo " <td>" . $row['usu_cedula'] . "</td>";
         echo " <td>" . $row['usu_nombre'] ."</td>";
         echo " <td>" . $row['usu_apellido'] . "</td>";
-        echo " <td>" . $row['usu_mail'] . "</td>";
+        echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
         echo " <td>" . $row['usu_nacimiento'] . "</td>";
-        echo " <td>" . $row['telf_numero'] . "</td>";
-        echo " <td>" . $row['telf_operadora'] ."</td>";
+        echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
+            echo " <td>" . $row['telf_operadora'] ."</td>";
         echo " <td>" . $row['telf_tipo'] . "</td>";
         echo "</tr>";
         }
