@@ -16,7 +16,7 @@ if(strlen($cedula)==10){
     $result6= $conn->query($sql2);
 
     $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id, telf_numero,telf_operadora,telf_tipo 
-    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula'";    
+    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula' and usu_eliminado = 'N'";    
    
     $result2= $conn->query($sql);
 
@@ -110,7 +110,7 @@ if(strlen($cedula)==10){
         //$sql3 = "SELECT * FROM usuarios WHERE usu_eliminado = 'N' and usu_mail='$cedula'";
         //$sql2 = "SELECT * FROM telefonos WHERE usuarios_usu_id ='$cedulacom'";
         $sql2="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento,usu_id, telf_numero,telf_tipo,telf_operadora
-         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedulacom'";
+         FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedulacom' and usu_eliminado = 'N'";
         //$result = $conn->query($sql3);
         $result2= $conn->query($sql2);
 

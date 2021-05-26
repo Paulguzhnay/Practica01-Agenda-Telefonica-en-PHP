@@ -16,9 +16,9 @@
         <a href="../../index.html"><img src="../../images/Agenda Telefonica.jpg"></a>
         <nav>
             <ul>
-            <li><a href="../../admin/vista/user/indexBusqueda.php">Búsqueda de Contactos</a></li>
+            <li><a href="../../admin/controladores/controlodorSesion.php">Búsqueda de Contactos</a></li>
             <li><a href="../../public/vista/crearUsuario.html">Registrarse</a></li>
-            <li><a href="../../public/vista/login.html">Iniciar Sesión</a></li>
+            <li><a href="../../public/controladores/controlodorSesion.php">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>

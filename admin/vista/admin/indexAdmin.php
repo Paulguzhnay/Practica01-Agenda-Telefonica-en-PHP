@@ -62,7 +62,7 @@
     echo "</tr>";
  }
  $usuario = $_SESSION['usuario'];
-echo($usuario);
+
  $conn->close();
  ?>
 
