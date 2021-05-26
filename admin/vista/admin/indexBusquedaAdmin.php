@@ -29,12 +29,6 @@
 <br>
 <br>
 <br>
-
-
-
-
-
-
 </body>
 <footer>
       Paul Guzhñay &amp; Joseph Reinoso - Universidad Politécnica Salesiana 

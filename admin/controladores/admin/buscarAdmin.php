@@ -46,7 +46,7 @@ if(strlen($cedula)==10){
     echo " <td>" . $row['usu_apellido'] . "</td>";
     echo " <td> <a class:mail href=mailto:>" . $row['usu_mail'] . "</a></td>";
     echo " <td>" . $row['usu_nacimiento'] . "</td>";
-    echo " <td> <a class:telefono href=tel=>" . $row['telf_numero'] . "</a> </td>";
+    echo " <td> <a class:telefono href=tel:>" . $row['telf_numero'] . "</a> </td>";
 echo " <td>" . $row['telf_operadora'] ."</td>";
     echo " <td>" . $row['telf_tipo'] . "</td>";
     echo " <td> <a href='../admin/eliminar.php?id=" . $row['usu_id'] . "'>Eliminar</a> </td>";
