@@ -8,7 +8,7 @@ if(strlen($cedula)==10){
 
 
     $sql="SELECT usu_cedula,usu_nombre,usu_apellido,usu_mail,usu_nacimiento, telf_numero,telf_operadora,telf_tipo 
-    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula'";    
+    FROM usuarios u, telefonos te WHERE u.usu_cedula=te.usuarios_usu_id and u.usu_cedula='$cedula'and usu_eliminado = 'N'";    
     $result = $conn->query($sql);
     $result2= $conn->query($sql);
     //cambiar la consulta para puede buscar por ocurrencias de letras

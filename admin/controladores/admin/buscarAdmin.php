@@ -90,6 +90,7 @@ if(strlen($cedula)==10){
     echo "</tr>";
     echo "</table>";
     }
+
    // echo "<form id='formulario01' method='POST' action='agregar-telf.php'>
     //<input type='submit' id='agregar' name='agregar' value='Agregar Nuevo Teléfono' /> </form>";
     $conn->close();
@@ -180,13 +181,17 @@ if(strlen($cedula)==10){
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
             echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
-        } 
+
+            
+        }
+        
+ 
     } else {
     echo "<tr>";
     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
     echo "</tr>";
     }
-
+    echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
       
     $conn->close();
 
