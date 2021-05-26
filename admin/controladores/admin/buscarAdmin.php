@@ -74,7 +74,6 @@ if(strlen($cedula)==10){
             echo " <td>" . $row['telf_tipo'] . "</td>";
             echo " <td> <a href='eliminar-telf.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
-            echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
         } 
     } else {
@@ -167,7 +166,6 @@ if(strlen($cedula)==10){
             echo " <td>" . $row['telf_tipo'] . "</td>";
             echo " <td> <a href='eliminar-telf.php?codigo=" . $row['telf_id'] . "'>Eliminar</a> </td>";
             echo " <td> <a href='modificar-telf.php?codigo=" . $row['telf_id'] . "'>Modificar Numero</a> </td>";
-            echo " <td> <a href='agregar-telf.php?codigo=" . $row['telf_id'] . "'>Agregar Numero</a> </td>";
             echo "</tr>";
             $_SESSION['telid']=$row['telf_id'];
             
