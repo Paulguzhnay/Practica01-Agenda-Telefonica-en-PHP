@@ -4,7 +4,7 @@
     <link href="../../../css/estilo.css" rel="stylesheet" />
     <link href="../../../css/layout.css" rel="stylesheet" />
     <meta charset="UTF-8">
-    <script type="text/javascript" src="../../controladores/user/buscarUser.js"></script>
+    <script type="text/javascript" src="../../../public/controladores/validaciones.js"></script>
     <title>Agregar tu nuevo teléfono</title>
 </head>
 <body>

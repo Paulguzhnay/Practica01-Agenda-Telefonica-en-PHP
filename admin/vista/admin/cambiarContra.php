@@ -5,6 +5,7 @@
     <title>Actualizar Datos del Usuario</title>
     <link href="../../../css/estilo.css" rel="stylesheet" />
     <link href="../../../css/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../public/controladores/validaciones.js"></script>
 </head>
 <body>
     <a href="../../../public/vista/login.html"><img src="../../../images/Agenda Telefonica.jpg"></a>
@@ -23,7 +24,8 @@
         <br>
         <label for="cedula">Contraseña Nueva (*)</label>
         <input type="password" id="contrasena2" name="contrasena2" value="" required
-        placeholder="Ingrese su contraseña nueva ..."/>
+        placeholder="Ingrese su contraseña nueva ..." onkeyup="return validarContrasenia(this)"/>
+        <span id="mensajeContrasenia" class="error"></span>
         <br>
         <input type="submit" id="modificar" name="modificar" value="Modificar" />
         <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />

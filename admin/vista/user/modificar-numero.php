@@ -5,6 +5,7 @@
     <title>Modificar datos de persona</title>
     <link href="../../../css/estilo.css" rel="stylesheet" />
     <link href="../../../css/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../public/controladores/validaciones.js"></script>
 </head>
 <body>
     <header>
@@ -23,11 +24,12 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
         ?>
-            <form id="formulario01" method="POST" action="../../controladores/user/modificar-numero.php">
+            <form id="formulario01" method="POST" action="../../controladores/user/modificar-numero.php" onsubmit="return validarCamposObligatorios()">
                 <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
                 <label for="numero">Número (*)</label>
                 <input type="text" id="numero" name="numero" value="<?php echo $row["telf_numero"]; ?>"
-                required placeholder="Ingrese su número ..."/>
+                required placeholder="Ingrese su número ..." onkeyup="return validarTelefono(this)"/>
+                <span id="mensajeTelefono" class="error"></span>
                 <br><label for="tipo">Tipo de Teléfono (*)</label>
                 <select id="tipo" name="tipo" value="<?php echo $row["telf_tipo"];
                 ?>" required placeholder="Ingrese el tipo de teléfono ..."/>
