@@ -2,12 +2,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 html{
-    background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
 	width: 100%;
-	max-width: 1200px;
+	max-width: 100%;
 	padding-left: 0.9%;
 	padding-right: 0.9%;
 	margin: 0px auto auto auto;

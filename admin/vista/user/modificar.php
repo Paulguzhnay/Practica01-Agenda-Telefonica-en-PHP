@@ -5,6 +5,7 @@
     <title>Modificar datos de persona</title>
     <link href="../../../css/estilo.css" rel="stylesheet" />
     <link href="../../../css/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../public/controladores/validaciones.js"></script>
 </head>
 <body>
     <header>
@@ -24,26 +25,30 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
         ?>
-            <form id="formulario01" method="POST" action="../../controladores/user/modificar.php">
+            <form id="formulario01" method="POST" action="../../controladores/user/modificar.php" onsubmit="return validarCamposObligatorios()">
                 <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
                 <label for="cedula">Cedula (*)</label>
-                <input type="text" id="cedula" name="cedula" value="<?php echo $row["usu_cedula"]; ?>"
-                required placeholder="Ingrese la cedula ..."/>
+                <input type="text" id="cedula" name="cedula" value="<?php echo $row["usu_cedula"]; ?> "
+                required placeholder="Ingrese la cedula ..." onkeyup="return validarCedula(this)"/>
+                <span id="mensajeCedula" class="error"></span>
                 <br>
                 <label for="nombres">Nombres (*)</label>
                 <input type="text" id="nombres" name="nombres" value="<?php echo $row["usu_nombre"];
-                ?>" required placeholder="Ingrese los dos nombres ..."/>
+                ?>" required placeholder="Ingrese los dos nombres ..." onkeyup="return validarNombre(this)"/>
+                <span id="mensajeNombres" class="error"></span>
                 <br>
                 <label for="apellidos">Apelidos (*)</label>
                 <input type="text" id="apellidos" name="apellidos" value="<?php echo $row["usu_apellido"];
-                ?>" required placeholder="Ingrese los dos apellidos ..."/>
+                ?>" required placeholder="Ingrese los dos apellidos ..." onkeyup="return validarApellido(this)"/>
+                <span id="mensajeApellidos" class="error"></span>
                 <br>
                 <label for="fecha">Fecha Nacimiento (*)</label>
                 <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $row["usu_nacimiento"]; ?>" required placeholder="Ingrese la fecha de nacimiento ..."/>
                 <br>
                 <label for="correo">Correo electrónico (*)</label>
                 <input type="email" id="correo" name="correo" value="<?php echo $row["usu_mail"]; ?>"
-                required placeholder="Ingrese el correo electrónico ..."/>
+                required placeholder="Ingrese el correo electrónico ..." onkeyup="return validarCorreo(this)"/>
+                <span id="mensajeCorreo" class="error"></span>
                 <br>
 
                 <input type="submit" id="modificar" name="modificar" value="Modificar" />
